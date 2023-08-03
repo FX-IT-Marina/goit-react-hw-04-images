@@ -111,16 +111,14 @@ export function ImageGallery({ imageName }) {
 
   if (status === 'rejected') {
     return (
-      <ErrorWrapper role="alert">
-        <Message>
-          There are no images like a <Span>{imageName}</Span>
-        </Message>
-        <img src={errorImage} width="240" alt="sadcat" />
-      </ErrorWrapper>
+      <Message>
+        There are no images like a <Span>{imageName}</Span>
+      </Message>
     );
   }
 }
 
 ImageGallery.propTypes = {
   onSubmit: PropTypes.func,
+  imageName: PropTypes.string.isRequired,
 };

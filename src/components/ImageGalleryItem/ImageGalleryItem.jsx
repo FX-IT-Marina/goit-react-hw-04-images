@@ -2,11 +2,10 @@ import { Item, Image } from './ImageGalleryItem.styled';
 import PropTypes from 'prop-types';
 
 export const ImageGalleryItem = ({
-  image: { id, webformatURL, tags, key },
-  onClick,
+  image: { id, webformatURL, tags, onClick },
 }) => {
   return (
-    <Item key={key} id={id} onClick={onClick}>
+    <Item key={id} onClick={onClick}>
       <Image src={webformatURL} alt={tags} />
     </Item>
   );
@@ -17,6 +16,6 @@ ImageGalleryItem.propTypes = {
     id: PropTypes.number.isRequired,
     webformatURL: PropTypes.string.isRequired,
     tags: PropTypes.string.isRequired,
-    key: PropTypes.number,
+    onClick: PropTypes.func.isRequired,
   }),
 };
