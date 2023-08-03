@@ -1,16 +1,15 @@
-export const App = () => {
+import { useState } from 'react';
+import { Searchbar } from './SearchBar/SearchBar';
+import { ImageGallery } from './ImageGallery/ImageGallery';
+import { AppWrapper } from './App.styled';
+
+export function App() {
+  const [name, setName] = useState('');
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <AppWrapper>
+      <Searchbar onSubmit={setName} />
+      <ImageGallery imageName={name} />
+    </AppWrapper>
   );
-};
+}
