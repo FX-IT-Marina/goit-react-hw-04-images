@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
-import { List, Message, ErrorWrapper, Span } from './ImageGallery.styled';
+import { List, Message, Span } from './ImageGallery.styled';
 import { Loader } from 'components/Loader/Loader';
 import { fetchImages } from 'services/pixabayApi';
 import { Modal } from 'components/Modal/Modal';
