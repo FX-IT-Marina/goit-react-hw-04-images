@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Form, Button, Label, Input } from './SearchForm.styled';
-import PropTypes from 'prop-types';
 
 export function SearchForm({ onSubmit }) {
   const [value, setValue] = useState('');

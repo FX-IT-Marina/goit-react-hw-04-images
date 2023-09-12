@@ -1,6 +1,6 @@
-import { Wrapper } from './SearchBar.styled';
-import { SearchForm } from 'components/SearchForm/SearchForm';
 import PropTypes from 'prop-types';
+import { SearchForm } from 'components/SearchForm/SearchForm';
+import { Wrapper } from './SearchBar.styled';
 
 export const Searchbar = ({ onSubmit }) => {
   return (

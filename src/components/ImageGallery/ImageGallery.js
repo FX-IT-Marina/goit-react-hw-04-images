@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
-import { List, Message, Span } from './ImageGallery.styled';
 import { Loader } from 'components/Loader/Loader';
 import { fetchImages } from 'services/pixabayApi';
 import { Modal } from 'components/Modal/Modal';
 import { Button } from 'components/Button/Button';
-import PropTypes from 'prop-types';
+import { List, Message, ErrorWrapper, Span } from './ImageGallery.styled';
 
 export function ImageGallery({ imageName }) {
   const [images, setImages] = useState([]);
@@ -111,9 +111,11 @@ export function ImageGallery({ imageName }) {
 
   if (status === 'rejected') {
     return (
-      <Message>
-        There are no images like a <Span>{imageName}</Span>
-      </Message>
+      <ErrorWrapper role="alert">
+        <Message>
+          There are no images like a <Span>{imageName}</Span>
+        </Message>
+      </ErrorWrapper>
     );
   }
 }
